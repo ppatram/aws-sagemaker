@@ -1,0 +1,339 @@
+export interface CfnAppProps {
+    readonly appName: string;
+    readonly appType: string;
+    readonly domainId: string;
+    readonly resourceSpec?: cdk.IResolvable | CfnApp.ResourceSpecProperty;
+    readonly tags?: Array<cdk.CfnTag>;
+    readonly userProfileName: string;
+}
+export interface CfnAppImageConfigProps {
+    readonly appImageConfigName: string;
+    readonly codeEditorAppImageConfig?: CfnAppImageConfig.CodeEditorAppImageConfigProperty | cdk.IResolvable;
+    readonly jupyterLabAppImageConfig?: cdk.IResolvable | CfnAppImageConfig.JupyterLabAppImageConfigProperty;
+    readonly kernelGatewayImageConfig?: cdk.IResolvable | CfnAppImageConfig.KernelGatewayImageConfigProperty;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnClusterProps {
+    readonly clusterName?: string;
+    readonly instanceGroups: Array<CfnCluster.ClusterInstanceGroupProperty | cdk.IResolvable> | cdk.IResolvable;
+    readonly nodeRecovery?: string;
+    readonly orchestrator?: cdk.IResolvable | CfnCluster.OrchestratorProperty;
+    readonly tags?: Array<cdk.CfnTag>;
+    readonly vpcConfig?: cdk.IResolvable | CfnCluster.VpcConfigProperty;
+}
+export interface CfnCodeRepositoryProps {
+    readonly codeRepositoryName?: string;
+    readonly gitConfig: CfnCodeRepository.GitConfigProperty | cdk.IResolvable;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnDataQualityJobDefinitionProps {
+    readonly dataQualityAppSpecification: CfnDataQualityJobDefinition.DataQualityAppSpecificationProperty | cdk.IResolvable;
+    readonly dataQualityBaselineConfig?: CfnDataQualityJobDefinition.DataQualityBaselineConfigProperty | cdk.IResolvable;
+    readonly dataQualityJobInput: CfnDataQualityJobDefinition.DataQualityJobInputProperty | cdk.IResolvable;
+    readonly dataQualityJobOutputConfig: cdk.IResolvable | CfnDataQualityJobDefinition.MonitoringOutputConfigProperty;
+    readonly endpointName?: string;
+    readonly jobDefinitionName?: string;
+    readonly jobResources: cdk.IResolvable | CfnDataQualityJobDefinition.MonitoringResourcesProperty;
+    readonly networkConfig?: cdk.IResolvable | CfnDataQualityJobDefinition.NetworkConfigProperty;
+    readonly roleArn: string;
+    readonly stoppingCondition?: cdk.IResolvable | CfnDataQualityJobDefinition.StoppingConditionProperty;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnDeviceProps {
+    readonly device?: CfnDevice.DeviceProperty | cdk.IResolvable;
+    readonly deviceFleetName: string;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnDeviceFleetProps {
+    readonly description?: string;
+    readonly deviceFleetName: string;
+    readonly outputConfig: CfnDeviceFleet.EdgeOutputConfigProperty | cdk.IResolvable;
+    readonly roleArn: string;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnDomainProps {
+    readonly appNetworkAccessType?: string;
+    readonly appSecurityGroupManagement?: string;
+    readonly authMode: string;
+    readonly defaultSpaceSettings?: CfnDomain.DefaultSpaceSettingsProperty | cdk.IResolvable;
+    readonly defaultUserSettings: cdk.IResolvable | CfnDomain.UserSettingsProperty;
+    readonly domainName: string;
+    readonly domainSettings?: CfnDomain.DomainSettingsProperty | cdk.IResolvable;
+    readonly kmsKeyId?: string;
+    readonly subnetIds: Array<string>;
+    readonly tagPropagation?: string;
+    readonly tags?: Array<cdk.CfnTag>;
+    readonly vpcId: string;
+}
+export interface CfnEndpointProps {
+    readonly deploymentConfig?: CfnEndpoint.DeploymentConfigProperty | cdk.IResolvable;
+    readonly endpointConfigName: string;
+    readonly endpointName?: string;
+    readonly excludeRetainedVariantProperties?: Array<cdk.IResolvable | CfnEndpoint.VariantPropertyProperty> | cdk.IResolvable;
+    readonly retainAllVariantProperties?: boolean | cdk.IResolvable;
+    readonly retainDeploymentConfig?: boolean | cdk.IResolvable;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnEndpointConfigProps {
+    readonly asyncInferenceConfig?: CfnEndpointConfig.AsyncInferenceConfigProperty | cdk.IResolvable;
+    readonly dataCaptureConfig?: CfnEndpointConfig.DataCaptureConfigProperty | cdk.IResolvable;
+    readonly enableNetworkIsolation?: boolean | cdk.IResolvable;
+    readonly endpointConfigName?: string;
+    readonly executionRoleArn?: string;
+    readonly explainerConfig?: CfnEndpointConfig.ExplainerConfigProperty | cdk.IResolvable;
+    readonly kmsKeyId?: string;
+    readonly productionVariants: Array<cdk.IResolvable | CfnEndpointConfig.ProductionVariantProperty> | cdk.IResolvable;
+    readonly shadowProductionVariants?: Array<cdk.IResolvable | CfnEndpointConfig.ProductionVariantProperty> | cdk.IResolvable;
+    readonly tags?: Array<cdk.CfnTag>;
+    readonly vpcConfig?: cdk.IResolvable | CfnEndpointConfig.VpcConfigProperty;
+}
+export interface CfnFeatureGroupProps {
+    readonly description?: string;
+    readonly eventTimeFeatureName: string;
+    readonly featureDefinitions: Array<CfnFeatureGroup.FeatureDefinitionProperty | cdk.IResolvable> | cdk.IResolvable;
+    readonly featureGroupName: string;
+    readonly offlineStoreConfig?: any | cdk.IResolvable;
+    readonly onlineStoreConfig?: any | cdk.IResolvable;
+    readonly recordIdentifierFeatureName: string;
+    readonly roleArn?: string;
+    readonly tags?: Array<cdk.CfnTag>;
+    readonly throughputConfig?: cdk.IResolvable | CfnFeatureGroup.ThroughputConfigProperty;
+}
+export interface CfnImageProps {
+    readonly imageDescription?: string;
+    readonly imageDisplayName?: string;
+    readonly imageName: string;
+    readonly imageRoleArn: string;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnImageVersionProps {
+    readonly alias?: string;
+    readonly aliases?: Array<string>;
+    readonly baseImage: string;
+    readonly horovod?: boolean | cdk.IResolvable;
+    readonly imageName: string;
+    readonly jobType?: string;
+    readonly mlFramework?: string;
+    readonly processor?: string;
+    readonly programmingLang?: string;
+    readonly releaseNotes?: string;
+    readonly vendorGuidance?: string;
+}
+export interface CfnInferenceComponentProps {
+    readonly endpointArn?: string;
+    readonly endpointName: string;
+    readonly inferenceComponentName?: string;
+    readonly runtimeConfig?: CfnInferenceComponent.InferenceComponentRuntimeConfigProperty | cdk.IResolvable;
+    readonly specification: CfnInferenceComponent.InferenceComponentSpecificationProperty | cdk.IResolvable;
+    readonly tags?: Array<cdk.CfnTag>;
+    readonly variantName?: string;
+}
+export interface CfnInferenceExperimentProps {
+    readonly dataStorageConfig?: CfnInferenceExperiment.DataStorageConfigProperty | cdk.IResolvable;
+    readonly description?: string;
+    readonly desiredState?: string;
+    readonly endpointName: string;
+    readonly kmsKey?: string;
+    readonly modelVariants: Array<cdk.IResolvable | CfnInferenceExperiment.ModelVariantConfigProperty> | cdk.IResolvable;
+    readonly name: string;
+    readonly roleArn: string;
+    readonly schedule?: CfnInferenceExperiment.InferenceExperimentScheduleProperty | cdk.IResolvable;
+    readonly shadowModeConfig?: cdk.IResolvable | CfnInferenceExperiment.ShadowModeConfigProperty;
+    readonly statusReason?: string;
+    readonly tags?: Array<cdk.CfnTag>;
+    readonly type: string;
+}
+export interface CfnMlflowTrackingServerProps {
+    readonly artifactStoreUri: string;
+    readonly automaticModelRegistration?: boolean | cdk.IResolvable;
+    readonly mlflowVersion?: string;
+    readonly roleArn: string;
+    readonly tags?: Array<cdk.CfnTag>;
+    readonly trackingServerName: string;
+    readonly trackingServerSize?: string;
+    readonly weeklyMaintenanceWindowStart?: string;
+}
+export interface CfnModelProps {
+    readonly containers?: Array<CfnModel.ContainerDefinitionProperty | cdk.IResolvable> | cdk.IResolvable;
+    readonly enableNetworkIsolation?: boolean | cdk.IResolvable;
+    readonly executionRoleArn?: string;
+    readonly inferenceExecutionConfig?: CfnModel.InferenceExecutionConfigProperty | cdk.IResolvable;
+    readonly modelName?: string;
+    readonly primaryContainer?: CfnModel.ContainerDefinitionProperty | cdk.IResolvable;
+    readonly tags?: Array<cdk.CfnTag>;
+    readonly vpcConfig?: cdk.IResolvable | CfnModel.VpcConfigProperty;
+}
+export interface CfnModelBiasJobDefinitionProps {
+    readonly endpointName?: string;
+    readonly jobDefinitionName?: string;
+    readonly jobResources: cdk.IResolvable | CfnModelBiasJobDefinition.MonitoringResourcesProperty;
+    readonly modelBiasAppSpecification: cdk.IResolvable | CfnModelBiasJobDefinition.ModelBiasAppSpecificationProperty;
+    readonly modelBiasBaselineConfig?: cdk.IResolvable | CfnModelBiasJobDefinition.ModelBiasBaselineConfigProperty;
+    readonly modelBiasJobInput: cdk.IResolvable | CfnModelBiasJobDefinition.ModelBiasJobInputProperty;
+    readonly modelBiasJobOutputConfig: cdk.IResolvable | CfnModelBiasJobDefinition.MonitoringOutputConfigProperty;
+    readonly networkConfig?: cdk.IResolvable | CfnModelBiasJobDefinition.NetworkConfigProperty;
+    readonly roleArn: string;
+    readonly stoppingCondition?: cdk.IResolvable | CfnModelBiasJobDefinition.StoppingConditionProperty;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnModelCardProps {
+    readonly content: CfnModelCard.ContentProperty | cdk.IResolvable;
+    readonly createdBy?: cdk.IResolvable | CfnModelCard.UserContextProperty;
+    readonly lastModifiedBy?: cdk.IResolvable | CfnModelCard.UserContextProperty;
+    readonly modelCardName: string;
+    readonly modelCardStatus: string;
+    readonly securityConfig?: cdk.IResolvable | CfnModelCard.SecurityConfigProperty;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnModelExplainabilityJobDefinitionProps {
+    readonly endpointName?: string;
+    readonly jobDefinitionName?: string;
+    readonly jobResources: cdk.IResolvable | CfnModelExplainabilityJobDefinition.MonitoringResourcesProperty;
+    readonly modelExplainabilityAppSpecification: cdk.IResolvable | CfnModelExplainabilityJobDefinition.ModelExplainabilityAppSpecificationProperty;
+    readonly modelExplainabilityBaselineConfig?: cdk.IResolvable | CfnModelExplainabilityJobDefinition.ModelExplainabilityBaselineConfigProperty;
+    readonly modelExplainabilityJobInput: cdk.IResolvable | CfnModelExplainabilityJobDefinition.ModelExplainabilityJobInputProperty;
+    readonly modelExplainabilityJobOutputConfig: cdk.IResolvable | CfnModelExplainabilityJobDefinition.MonitoringOutputConfigProperty;
+    readonly networkConfig?: cdk.IResolvable | CfnModelExplainabilityJobDefinition.NetworkConfigProperty;
+    readonly roleArn: string;
+    readonly stoppingCondition?: cdk.IResolvable | CfnModelExplainabilityJobDefinition.StoppingConditionProperty;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnModelPackageProps {
+    readonly additionalInferenceSpecifications?: Array<CfnModelPackage.AdditionalInferenceSpecificationDefinitionProperty | cdk.IResolvable> | cdk.IResolvable;
+    readonly additionalInferenceSpecificationsToAdd?: Array<CfnModelPackage.AdditionalInferenceSpecificationDefinitionProperty | cdk.IResolvable> | cdk.IResolvable;
+    readonly approvalDescription?: string;
+    readonly certifyForMarketplace?: boolean | cdk.IResolvable;
+    readonly clientToken?: string;
+    readonly customerMetadataProperties?: cdk.IResolvable | Record<string, string>;
+    readonly domain?: string;
+    readonly driftCheckBaselines?: CfnModelPackage.DriftCheckBaselinesProperty | cdk.IResolvable;
+    readonly inferenceSpecification?: CfnModelPackage.InferenceSpecificationProperty | cdk.IResolvable;
+    readonly lastModifiedTime?: string;
+    readonly metadataProperties?: cdk.IResolvable | CfnModelPackage.MetadataPropertiesProperty;
+    readonly modelApprovalStatus?: string;
+    readonly modelCard?: cdk.IResolvable | CfnModelPackage.ModelCardProperty;
+    readonly modelMetrics?: cdk.IResolvable | CfnModelPackage.ModelMetricsProperty;
+    readonly modelPackageDescription?: string;
+    readonly modelPackageGroupName?: string;
+    readonly modelPackageName?: string;
+    readonly modelPackageStatusDetails?: cdk.IResolvable | CfnModelPackage.ModelPackageStatusDetailsProperty;
+    readonly modelPackageVersion?: number;
+    readonly samplePayloadUrl?: string;
+    readonly securityConfig?: cdk.IResolvable | CfnModelPackage.SecurityConfigProperty;
+    readonly skipModelValidation?: string;
+    readonly sourceAlgorithmSpecification?: cdk.IResolvable | CfnModelPackage.SourceAlgorithmSpecificationProperty;
+    readonly sourceUri?: string;
+    readonly tags?: Array<cdk.CfnTag>;
+    readonly task?: string;
+    readonly validationSpecification?: cdk.IResolvable | CfnModelPackage.ValidationSpecificationProperty;
+}
+export interface CfnModelPackageGroupProps {
+    readonly modelPackageGroupDescription?: string;
+    readonly modelPackageGroupName: string;
+    readonly modelPackageGroupPolicy?: any | cdk.IResolvable;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnModelQualityJobDefinitionProps {
+    readonly endpointName?: string;
+    readonly jobDefinitionName?: string;
+    readonly jobResources: cdk.IResolvable | CfnModelQualityJobDefinition.MonitoringResourcesProperty;
+    readonly modelQualityAppSpecification: cdk.IResolvable | CfnModelQualityJobDefinition.ModelQualityAppSpecificationProperty;
+    readonly modelQualityBaselineConfig?: cdk.IResolvable | CfnModelQualityJobDefinition.ModelQualityBaselineConfigProperty;
+    readonly modelQualityJobInput: cdk.IResolvable | CfnModelQualityJobDefinition.ModelQualityJobInputProperty;
+    readonly modelQualityJobOutputConfig: cdk.IResolvable | CfnModelQualityJobDefinition.MonitoringOutputConfigProperty;
+    readonly networkConfig?: cdk.IResolvable | CfnModelQualityJobDefinition.NetworkConfigProperty;
+    readonly roleArn: string;
+    readonly stoppingCondition?: cdk.IResolvable | CfnModelQualityJobDefinition.StoppingConditionProperty;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnMonitoringScheduleProps {
+    readonly endpointName?: string;
+    readonly failureReason?: string;
+    readonly lastMonitoringExecutionSummary?: cdk.IResolvable | CfnMonitoringSchedule.MonitoringExecutionSummaryProperty;
+    readonly monitoringScheduleConfig: cdk.IResolvable | CfnMonitoringSchedule.MonitoringScheduleConfigProperty;
+    readonly monitoringScheduleName: string;
+    readonly monitoringScheduleStatus?: string;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnNotebookInstanceProps {
+    readonly acceleratorTypes?: Array<string>;
+    readonly additionalCodeRepositories?: Array<string>;
+    readonly defaultCodeRepository?: string;
+    readonly directInternetAccess?: string;
+    readonly instanceMetadataServiceConfiguration?: CfnNotebookInstance.InstanceMetadataServiceConfigurationProperty | cdk.IResolvable;
+    readonly instanceType: string;
+    readonly kmsKeyId?: string;
+    readonly lifecycleConfigName?: string;
+    readonly notebookInstanceName?: string;
+    readonly platformIdentifier?: string;
+    readonly roleArn: string;
+    readonly rootAccess?: string;
+    readonly securityGroupIds?: Array<string>;
+    readonly subnetId?: string;
+    readonly tags?: Array<cdk.CfnTag>;
+    readonly volumeSizeInGb?: number;
+}
+export interface CfnNotebookInstanceLifecycleConfigProps {
+    readonly notebookInstanceLifecycleConfigName?: string;
+    readonly onCreate?: Array<cdk.IResolvable | CfnNotebookInstanceLifecycleConfig.NotebookInstanceLifecycleHookProperty> | cdk.IResolvable;
+    readonly onStart?: Array<cdk.IResolvable | CfnNotebookInstanceLifecycleConfig.NotebookInstanceLifecycleHookProperty> | cdk.IResolvable;
+}
+export interface CfnPartnerAppProps {
+    readonly applicationConfig?: cdk.IResolvable | CfnPartnerApp.PartnerAppConfigProperty;
+    readonly authType: string;
+    readonly clientToken?: string;
+    readonly enableIamSessionBasedIdentity?: boolean | cdk.IResolvable;
+    readonly executionRoleArn: string;
+    readonly maintenanceConfig?: cdk.IResolvable | CfnPartnerApp.PartnerAppMaintenanceConfigProperty;
+    readonly name: string;
+    readonly tags?: Array<cdk.CfnTag>;
+    readonly tier: string;
+    readonly type: string;
+}
+export interface CfnPipelineProps {
+    readonly parallelismConfiguration?: any | cdk.IResolvable;
+    readonly pipelineDefinition: any | cdk.IResolvable;
+    readonly pipelineDescription?: string;
+    readonly pipelineDisplayName?: string;
+    readonly pipelineName: string;
+    readonly roleArn: string;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnProjectProps {
+    readonly projectDescription?: string;
+    readonly projectName: string;
+    readonly serviceCatalogProvisionedProductDetails?: cdk.IResolvable | CfnProject.ServiceCatalogProvisionedProductDetailsProperty;
+    readonly serviceCatalogProvisioningDetails: any | cdk.IResolvable;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnSpaceProps {
+    readonly domainId: string;
+    readonly ownershipSettings?: cdk.IResolvable | CfnSpace.OwnershipSettingsProperty;
+    readonly spaceDisplayName?: string;
+    readonly spaceName: string;
+    readonly spaceSettings?: cdk.IResolvable | CfnSpace.SpaceSettingsProperty;
+    readonly spaceSharingSettings?: cdk.IResolvable | CfnSpace.SpaceSharingSettingsProperty;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnStudioLifecycleConfigProps {
+    readonly studioLifecycleConfigAppType: string;
+    readonly studioLifecycleConfigContent: string;
+    readonly studioLifecycleConfigName: string;
+    readonly tags?: Array<cdk.CfnTag>;
+}
+export interface CfnUserProfileProps {
+    readonly domainId: string;
+    readonly singleSignOnUserIdentifier?: string;
+    readonly singleSignOnUserValue?: string;
+    readonly tags?: Array<cdk.CfnTag>;
+    readonly userProfileName: string;
+    readonly userSettings?: cdk.IResolvable | CfnUserProfile.UserSettingsProperty;
+}
+export interface CfnWorkteamProps {
+    readonly description?: string;
+    readonly memberDefinitions?: Array<cdk.IResolvable | CfnWorkteam.MemberDefinitionProperty> | cdk.IResolvable;
+    readonly notificationConfiguration?: cdk.IResolvable | CfnWorkteam.NotificationConfigurationProperty;
+    readonly tags?: Array<cdk.CfnTag>;
+    readonly workforceName?: string;
+    readonly workteamName?: string;
+}
